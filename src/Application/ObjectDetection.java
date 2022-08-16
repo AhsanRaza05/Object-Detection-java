@@ -131,12 +131,13 @@ public class ObjectDetection {
         JFilePickerFrame.getFilePath();
     }
     
-    public static void result(String path) {
+    public static String result(String path) {
     	
     	BufferedImage image;
         int width;
         int height;
        
+        String result = "";
         
         try {
             //File input = new File("C:\\Users\\AHSAN\\Desktop\\abc.bmp"); // Has 15 Objects
@@ -158,8 +159,11 @@ public class ObjectDetection {
             width = image.getWidth();
             height = image.getHeight();
 
-            System.out.println("Height = " + height);
-            System.out.println("Width = " + width);
+            result += "Height = " + height + "\n";
+            result += "Width = " + width + "\n";
+            
+//            System.out.println("Height = " + height);
+//            System.out.println("Width = " + width);
             img = new int[height][width];
             
             int count = 0;
@@ -172,7 +176,9 @@ public class ObjectDetection {
                     img[i][j] = c.getBlue();
                 }
             }
-            System.out.println("Count = "+ count);
+            	
+            result += "Count = "+ count + "\n";
+//            System.out.println("Count = "+ count);
    
         } catch (Exception e) {
 
@@ -189,8 +195,10 @@ public class ObjectDetection {
         
         ArrayList <ObjectDetection> x;
 
-        System.out.println("Height = " + img.length);
-        System.out.println("Width = " + img[0].length);
+        result += "Height = " + img.length + "\n";
+        result += "Width = " + img[0].length + "\n"; 
+//        System.out.println("Height = " + img.length);
+//        System.out.println("Width = " + img[0].length);
 
         System.out.println("img = "+img[124][114]);
 
@@ -288,13 +296,16 @@ public class ObjectDetection {
             }
         }
 
-        System.out.println("Total " + total);
-        System.out.println("No of 1s: " + cv);
+        result += "Total " + total + "\n";
+        result += "No. of 1s: " + cv + "\n";
+//        System.out.println("Total " + total);
+//        System.out.println("No of 1s: " + cv);
 
         int f = 0;
 
             // Complexity = O(n^4)
-        System.out.println("\n No of Objects:" + objects.size());
+        result += "\n No of Objects:" + objects.size() + "\n";	
+//        System.out.println("\n No of Objects:" + objects.size());
 
         // Second Last Row
         for(int ii = objects.size() - 2 ; ii >= 0 ; ii--){
@@ -309,7 +320,9 @@ public class ObjectDetection {
 
                         if((objects.get(ii).get(jj).x == objects.get(aa).get(kk).x ) && (objects.get(ii).get(jj).y == objects.get(aa).get(kk).y )){
                     
-                            System.out.print("jojo ");
+                        	
+                        	result += "jojo ";
+//                            System.out.print("jojo ");
                             objects.get(ii).addAll(objects.get(aa));
                             objects.remove(aa);
                             break l;
@@ -352,18 +365,22 @@ public class ObjectDetection {
 
         // Display Final List of All Objects along with the coordinates
             // Complexity = O(n^2)
-        System.out.println("\n Final List \n");
+        result += "\n Final List \n\n";
+//        System.out.println("\n Final List \n");
         Integer c = 1, z = 0 ;
         for(ArrayList <ObjectDetection> l : objects2){
 
-            System.out.printf("\nObject # %s consists of %s Pixels \n", c , l.size());
+        	result += "\nObject # %s consists of %s Pixels \n".formatted(c , l.size());
+//            System.out.printf("\nObject # %s consists of %s Pixels \n", c , l.size());
             z += l.size();
 
             for(ObjectDetection t : l){
 
-               System.out.printf("(%s, %s), ",t.x,t.y);
+            	result += "(%s, %s), ".formatted(t.x,t.y);
+//               System.out.printf("(%s, %s), ",t.x,t.y);
             }
-            System.out.println();
+            result += "\n";
+//            System.out.println();
             c++;
         }
 
@@ -373,12 +390,20 @@ public class ObjectDetection {
             y += l.size();
 
         }
-        System.out.println("\nNo. of Objects: " + objects2.size());
-
-        System.out.println("\nTotal Pixel: " + z);
-        System.out.println("\nTotal Pixel: " + y);
+        
+        result += "\nNo. of Objects: " + objects2.size() + "\n"; 
+        
+//        System.out.println("\nNo. of Objects: " + objects2.size());
+        
+        result += "\nTotal Pixel: " + z + "\n";
+        result += "\nTotal Pixel: " + y + "\n";
+        
+//        System.out.println("\nTotal Pixel: " + z);
+//        System.out.println("\nTotal Pixel: " + y);
 
         objects = null;
+        
+        return result;
 
         // LinkedHashSet hs = new LinkedHashSet<>()
 

@@ -58,7 +58,7 @@ public class JFilePicker extends JPanel {
             if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 textField.setText(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println("HIUU");
-                ObjectDetection.result(textField.getText().trim());
+               System.out.println( ObjectDetection.result(textField.getText().trim()));
             }
         } else if (mode == MODE_SAVE) {
             if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
