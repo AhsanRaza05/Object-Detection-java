@@ -1,21 +1,29 @@
+package Application;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import com.test.jfilepicker.JFilePicker;
+import com.test.jfilepicker.JFilePickerFrame;
+
 import java.util.*;
 
-public class Task7 {
+public class ObjectDetection {
     
     final int x, y; 
-    static int objectColor = 0;
+    static int objectColor = 255;
 
     //objectColor = 0; // Black Colored Objects
     //objectColor = 255; // White Colored Objects
 
     static int img[][] = null;
 
-    Task7(final int a, final int b){
+    ObjectDetection(final int a, final int b){
 
         x = a;
         y = b;
@@ -26,11 +34,11 @@ public class Task7 {
         return " x = %s, y = %s ".formatted(x, y) ;
     }
 
-    public static boolean isCommon(ArrayList<Task7> p, ArrayList<Task7> q){
+    public static boolean isCommon(ArrayList<ObjectDetection> p, ArrayList<ObjectDetection> q){
 
-        for(Task7 a : p){
+        for(ObjectDetection a : p){
 
-            for(Task7 b : q){
+            for(ObjectDetection b : q){
 
                 if(a.x == b.x && a.y == b.y){
 
@@ -43,9 +51,9 @@ public class Task7 {
         return false;
 
     }
-    public static ArrayList <Task7> ND (int i, int j){
+    public static ArrayList <ObjectDetection> ND (int i, int j){
 
-        ArrayList<Task7> x = new ArrayList(4);
+        ArrayList<ObjectDetection> x = new ArrayList(4);
 
         // For Finding FOUR DIAGONAL MEMBERS
 
@@ -53,63 +61,63 @@ public class Task7 {
         
         if((i - 1) > -1 && (j + 1) < img[i].length && img[i - 1][j + 1] == objectColor && isCommon(N4(i, j) , N4(i-1, j+1)) == false){
 
-            x.add(new Task7(i - 1, j + 1));
+            x.add(new ObjectDetection(i - 1, j + 1));
         }
 
         // Top Right
         if((i + 1) < img.length && (j + 1) < img[i].length && img[i + 1][j + 1] == objectColor && isCommon(N4(i, j) , N4(i+1, j+1)) == false){
                                     
-            x.add(new Task7(i + 1, j + 1));
+            x.add(new ObjectDetection(i + 1, j + 1));
         }
 
         // Bottom Left
         if((i - 1) > -1 && (j - 1) > -1 && img[i - 1][j - 1] == objectColor && isCommon(N4(i, j) , N4(i-1, j-1)) == false){
 
-            x.add(new Task7(i - 1, j - 1));                        
+            x.add(new ObjectDetection(i - 1, j - 1));                        
         }
 
         // Bottom Right
         if((i + 1) < img.length && (j - 1) > -1 && img[i + 1][j - 1] == objectColor && isCommon(N4(i, j) , N4(i+1, j-1)) == false){
 
-            x.add(new Task7(i + 1, j - 1));
+            x.add(new ObjectDetection(i + 1, j - 1));
         }
         
 
         return x;
     }
 
-    public static ArrayList<Task7> N4(int i, int j){
+    public static ArrayList<ObjectDetection> N4(int i, int j){
 
         
-        ArrayList<Task7> x = new ArrayList(4);
+        ArrayList<ObjectDetection> x = new ArrayList(4);
 
         // For Finding FOUR DIRECT NEIGHBOURS
 
         // LEFT 
         if((j - 1) > -1 && img[i][j - 1] == objectColor){
 
-            x.add(new Task7(i, j - 1));
+            x.add(new ObjectDetection(i, j - 1));
             //hasNeighbours = true;
         }
 
         //RIGHT
         if((j + 1) < img[i].length && img[i][j + 1] == objectColor){
 
-            x.add(new Task7(i, j + 1));
+            x.add(new ObjectDetection(i, j + 1));
             //hasNeighbours = true;
         }
 
         // TOP
         if((i - 1) > -1 && img[i - 1][j] == objectColor){
 
-            x.add(new Task7(i - 1, j));
+            x.add(new ObjectDetection(i - 1, j));
             //hasNeighbours = true;
         }
 
         // BOTTOM
         if((i + 1) < img.length && img[i + 1][j] == objectColor){
 
-            x.add(new Task7(i + 1, j));
+            x.add(new ObjectDetection(i + 1, j));
             //hasNeighbours = true;
         }
 
@@ -120,17 +128,30 @@ public class Task7 {
     public static void main(String[] args) {
         // System.out.print();
 
-        BufferedImage image;
+        JFilePickerFrame.getFilePath();
+    }
+    
+    public static void result(String path) {
+    	
+    	BufferedImage image;
         int width;
         int height;
+       
         
         try {
             //File input = new File("C:\\Users\\AHSAN\\Desktop\\abc.bmp"); // Has 15 Objects
             System.out.println("HI AHSA");
-            //File input = new File("C:\\Users\\AHSAN\\Desktop\\filled.bmp");
+            
+//            JFilePickerFrame t = new JFilePickerFrame();
+//            t.setVisible(true);
+            
+            File input = new File(path);
+            System.out.println(input);
+            //File input = new File("filled.bmp");
+//            File input = new File("src\\com\\images\\Fruits.bmp");
             //File input = new File("C:\\Users\\AHSAN\\Desktop\\Test.bmp");
 
-            File input = new File("C:\\Users\\AHSAN\\Desktop\\Java Image Testing\\Second Test\\Test2.bmp");
+            // ? File input = new File("C:\\Users\\AHSAN\\Desktop\\Java Image Testing\\Second Test\\Test2.bmp");
             //File input = new File("C:\\Users\\AHSAN\\Desktop\\Java Image Testing\\Second Test\\Test3.bmp");
 
             image = ImageIO.read(input);
@@ -164,9 +185,9 @@ public class Task7 {
         boolean isPreviouseObjectPart = false;
         boolean isNothingCommon = false;
         
-        ArrayList < ArrayList<Task7> > objects = new ArrayList(10);
+        ArrayList < ArrayList<ObjectDetection> > objects = new ArrayList(10);
         
-        ArrayList <Task7> x;
+        ArrayList <ObjectDetection> x;
 
         System.out.println("Height = " + img.length);
         System.out.println("Width = " + img[0].length);
@@ -193,7 +214,7 @@ public class Task7 {
 
                     hasNeighbours = !x.isEmpty();
    
-                    x.add(new Task7(i,j));
+                    x.add(new ObjectDetection(i,j));
 
                     if(!hasNeighbours){ // If Pixel has No Neighbours then consider it as new object directly.
                         o++;
@@ -209,11 +230,11 @@ public class Task7 {
 
                         isNothingCommon = false;
 
-                        loop2 : for(ArrayList <Task7> l : objects){
+                        loop2 : for(ArrayList <ObjectDetection> l : objects){
 
-                                    for(Task7 t : l){
+                                    for(ObjectDetection t : l){
 
-                                        for(Task7 u : x){
+                                        for(ObjectDetection u : x){
 
                                             //if((Math.abs(t.x - u.x) == 1 && t.y == u.y) || (Math.abs(t.y - u.y) == 1 && t.x == u.x) || (t.x == u.x && t.y == u.y)){
                                             if((Math.abs(t.x - u.x) == 1 && t.y == u.y) || (Math.abs(t.y - u.y) == 1 && t.x == u.x) || (t.x == u.x && t.y == u.y) || (Math.abs(t.x - u.x) == 1 && Math.abs(t.y - u.y) == 1)){
@@ -298,15 +319,15 @@ public class Task7 {
             }    
         }
 
-        ArrayList < ArrayList<Task7> > objects2 = new ArrayList(10);
-        ArrayList <Task7> x2  = new ArrayList<Task7>();
+        ArrayList < ArrayList<ObjectDetection> > objects2 = new ArrayList(10);
+        ArrayList <ObjectDetection> x2  = new ArrayList<ObjectDetection>();
         boolean isExists = false;
 
         // Remove the Repetation of coordinates from each Object 
             // Complexity = O(n^3)
         for(int i = 0; i < objects.size(); i++){
             
-            x2  = new ArrayList<Task7>();
+            x2  = new ArrayList<ObjectDetection>();
             
             lop: for(int j = 0; j < objects.get(i).size(); j++){
                 
@@ -333,12 +354,12 @@ public class Task7 {
             // Complexity = O(n^2)
         System.out.println("\n Final List \n");
         Integer c = 1, z = 0 ;
-        for(ArrayList <Task7> l : objects2){
+        for(ArrayList <ObjectDetection> l : objects2){
 
             System.out.printf("\nObject # %s consists of %s Pixels \n", c , l.size());
             z += l.size();
 
-            for(Task7 t : l){
+            for(ObjectDetection t : l){
 
                System.out.printf("(%s, %s), ",t.x,t.y);
             }
@@ -347,7 +368,7 @@ public class Task7 {
         }
 
         int y = 0;
-        for(ArrayList <Task7> l : objects){
+        for(ArrayList <ObjectDetection> l : objects){
 
             y += l.size();
 
@@ -383,3 +404,8 @@ public class Task7 {
 
 // 8:23 - 53
 // 8:41 -52
+
+// 11:26 - 11 :
+
+
+// 11:44 - 11 : 57
