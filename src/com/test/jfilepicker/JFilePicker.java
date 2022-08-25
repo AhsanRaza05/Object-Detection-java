@@ -5,9 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
  
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import Application.ObjectDetection;
@@ -58,7 +62,35 @@ public class JFilePicker extends JPanel {
             if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 textField.setText(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println("HIUU");
-               System.out.println( ObjectDetection.result(textField.getText().trim()));
+                
+//                JOptionPane.showMessageDialog(null, ObjectDetection.result(textField.getText().trim()));
+//               System.out.println( );
+                
+             // create a JTextArea
+        	   	JTextArea textArea = new JTextArea(38, 45);
+        	   	textArea.setEditable(false);
+        	
+        	   	JDialog dialgoue;
+        	
+        	   	JOptionPane pane;
+        	
+        	   	JScrollPane scrollPane;
+          	
+        	    // Display Result in Dialogue Box
+        	   	
+        	   	textArea.setText(ObjectDetection.result(textField.getText().trim()));
+        	   	
+        		// wrap a scrollpane around it
+        		scrollPane = new JScrollPane(textArea);
+
+        		// display them in a message dialog
+        		pane = new JOptionPane(scrollPane);
+
+        		dialgoue = pane.createDialog(null,
+        				"***************************************** Object Detection in Java ***************************************** ");
+        		// dialgoue.setLocation(0,0);
+        		dialgoue.setVisible(true);
+                
             }
         } else if (mode == MODE_SAVE) {
             if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
