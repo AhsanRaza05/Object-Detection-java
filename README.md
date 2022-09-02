@@ -29,7 +29,6 @@ It is a Java based GUI desktop application which “detects the objects in a bin
 
 ### <div id = "Neighbour"> 1-Neighborhood </div>
 
-
 A Digital Image comprises of a 2D matrix, and every element is called as Pixel.
 The Image is denoted by f(x,y) and any pixel can be denoted by small letter, say p, q …
 Every Pixel has some Neighbors located around it.
@@ -108,8 +107,7 @@ Two pixels p and q with values from V are m-connected if:
        q is in N4 (p), 	OR
        q is in ND (p) AND the set  N4 (p) ∩  N4 			(p) is empty.
 
-## <div id = "UI">  Program Screenshots </div>
-
+## <div id = "Scr">  Program Screenshots </div>
 
 <p align = 'center'>
  <img src = "ScreenShots/UI/FirstWindow.png"  alt = "1st Window" >
@@ -117,30 +115,30 @@ Two pixels p and q with values from V are m-connected if:
  
  <div align = "center">
   <figcaption align = "center"> Fig-A: Browsing image </figcaption>
- </div>
+ </div> </br>
  
  <p align = 'center'>
  <img src = "ScreenShots/UI/SecondWindow.png"  alt = "2nd Window" >
 </p>
  
  <div align = "center">
-  <figcaption align = "center"> Fig-A: Selecting an image </figcaption>
- </div>
+  <figcaption align = "center"> Fig-B: Selecting an image </figcaption>
+ </div> </br>
  
  <p align = 'center'>
  <img src = "ScreenShots/UI/ThirdWindow.png"  alt = "3rd Window" >
 </p>
  
  <div align = "center">
-  <figcaption align = "center"> Fig-A: Specifying color of object  </figcaption>
- </div>
+  <figcaption align = "center"> Fig-C: Specifying color of object  </figcaption>
+ </div> </br>
 
  <p align = 'center'>
  <img src = "ScreenShots/UI/FinalOutputWindow.png"  alt = "4th Window" >
 </p>
  
  <div align = "center">
-  <figcaption align = "center"> Fig-A: Result  </figcaption>
+  <figcaption align = "center"> Fig-D: Result  </figcaption>
  </div>
  
  
