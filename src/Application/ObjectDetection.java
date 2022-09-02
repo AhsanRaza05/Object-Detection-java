@@ -16,7 +16,7 @@ import java.util.*;
 public class ObjectDetection {
     
     final int x, y; 
-    static int objectColor = 255;
+    static int objectColor;
 
     //objectColor = 0; // Black Colored Objects
     //objectColor = 255; // White Colored Objects
@@ -33,6 +33,7 @@ public class ObjectDetection {
         //System.out.printf();
         return " x = %s, y = %s ".formatted(x, y) ;
     }
+    
 
     public static boolean isCommon(ArrayList<ObjectDetection> p, ArrayList<ObjectDetection> q){
 
@@ -128,10 +129,15 @@ public class ObjectDetection {
     public static void main(String[] args) {
         // System.out.print();
 
+    	
         JFilePickerFrame.getFilePath();
     }
     
-    public static String result(String path) {
+    public static String result(String path, String oColor) {
+    	
+    	//objectColor = 0; // Black Colored Objects
+	    //objectColor = 255; // White Colored Objects
+    	objectColor = (int)((oColor.equalsIgnoreCase("1"))? 0 : 255);
     	
     	BufferedImage image;
         int width;

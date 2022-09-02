@@ -25,8 +25,8 @@ public class JFilePickerFrame extends JFrame {
         
         // access JFileChooser class directly
         JFileChooser fileChooser = filePicker.getFileChooser();
-        fileChooser.setCurrentDirectory(new File("C:\\Users\\AHSAN\\Desktop\\Java Image Testing\\Second Test\\Latest\\src\\com\\images"));
-        
+//        fileChooser.setCurrentDirectory(new File("C:\\Users\\AHSAN\\Desktop\\Java Image Testing\\Second Test\\Latest\\src\\com\\images"));
+       
         filePath = filePicker.getSelectedFilePath();
         // add the component to the frame
         add(filePicker);
@@ -38,7 +38,7 @@ public class JFilePickerFrame extends JFrame {
 	
 	public static String getFilePath() {
 		
-JFrame frame = new JFrame("Test using JFilePicker");
+		JFrame frame = new JFrame("Object Detection");
         
         frame.setLayout(new FlowLayout());
         
@@ -50,9 +50,11 @@ JFrame frame = new JFrame("Test using JFilePicker");
         
         // access JFileChooser class directly
         JFileChooser fileChooser = filePicker.getFileChooser();
-        fileChooser.setCurrentDirectory(new File("C:\\Users\\AHSAN\\Desktop\\Java Image Testing\\Second Test\\Latest\\src\\com\\images"));
+        System.out.println(System.getProperty("user.dir"));
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir") + "\\src\\com\\test\\images"));
         
         String filePath = filePicker.getSelectedFilePath();
+        
         // add the component to the frame
         frame.add(filePicker);
          
@@ -63,14 +65,6 @@ JFrame frame = new JFrame("Test using JFilePicker");
 		
 		return filePath;
 	}
-     
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-//                new JFilePickerFrame().setVisible(true);
-            }
-        });
-    }
+
  
 }

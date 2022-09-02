@@ -63,9 +63,6 @@ public class JFilePicker extends JPanel {
                 textField.setText(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println("HIUU");
                 
-//                JOptionPane.showMessageDialog(null, ObjectDetection.result(textField.getText().trim()));
-//               System.out.println( );
-                
              // create a JTextArea
         	   	JTextArea textArea = new JTextArea(38, 45);
         	   	textArea.setEditable(false);
@@ -78,7 +75,11 @@ public class JFilePicker extends JPanel {
           	
         	    // Display Result in Dialogue Box
         	   	
-        	   	textArea.setText(ObjectDetection.result(textField.getText().trim()));
+        	   	String objectColor = JOptionPane.showInputDialog("Enter Color of the object:\n1 --> Black Colored Objects\n2 --> White colored objects ");
+        	   	
+        	   	System.out.println(objectColor);
+        	   	
+        	   	textArea.setText(ObjectDetection.result(textField.getText().trim(), objectColor));
         	   	
         		// wrap a scrollpane around it
         		scrollPane = new JScrollPane(textArea);
