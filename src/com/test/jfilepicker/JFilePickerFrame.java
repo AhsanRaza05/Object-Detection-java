@@ -18,10 +18,10 @@ public class JFilePickerFrame extends JFrame {
         setLayout(new FlowLayout());
  
         // set up a file picker component
-        JFilePicker filePicker = new JFilePicker("Pick a file", "Browse...");
+        JFilePicker filePicker = new JFilePicker("Select an image", "Browse...");
         filePicker.setMode(JFilePicker.MODE_OPEN);
         filePicker.addFileTypeFilter(".jpg", "JPEG Images");
-        filePicker.addFileTypeFilter(".mp4", "MPEG-4 Videos");
+        //filePicker.addFileTypeFilter(".mp4", "MPEG-4 Videos");
         
         // access JFileChooser class directly
         JFileChooser fileChooser = filePicker.getFileChooser();
