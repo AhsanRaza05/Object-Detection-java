@@ -32,6 +32,7 @@ Load and Execute Project in Eclipse IDE
 A Digital Image comprises of a 2D matrix, and every element is called as Pixel.
 The Image is denoted by f(x,y) and any pixel can be denoted by small letter, say p, q …
 Every Pixel has some Neighbors located around it.
+
 Different types of neighbors include:
 4 Neighbors
 D Neighbors
@@ -39,7 +40,6 @@ D Neighbors
 
 #### <div id = "4neighbours"> 4-Neighbors </div>
 
-#### (i) 4-Neighbors
 A pixel ’p’ located at coordinate value (x,y) has 4 neighbors, which are adjacent to ‘p’.
 The coordinate values can be determined as:
 (x+1,y)
@@ -47,6 +47,14 @@ The coordinate values can be determined as:
 (x,y+1)
 (x,y-1)
 by N4(p) 4 Neighbors are denoted
+
+ <p align = 'center'>
+ <img src = "ScreenShots/Neighbors/4Neighbors.png"  alt = "Image of 4-Neighbors" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> 4-Neighbors  </figcaption>
+ </div>
 
 #### <div id = "Dneighbours"> (ii) D-Neighbors </div>
 
@@ -57,6 +65,14 @@ The coordinate values can be determined as:
 (x-1,y+1)
 (x-1,y-1)
 8 Neighbors are denoted by N8(p)
+
+ <p align = 'center'>
+ <img src = "ScreenShots/Neighbors/DNeighbors.png"  alt = "Image of D-Neighbors" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> D-Neighbors  </figcaption>
+ </div>
 
 #### <div id = "8neighbours"> (ii) 8-Neighbors </div>
 
@@ -71,6 +87,14 @@ A pixel ’p’ located at coordinate value (x,y) has 8 neighbors, which are com
 (x+1,y-1)
 (x-1,y+1)
 (x-1,y-1)
+
+<p align = 'center'>
+ <img src = "ScreenShots/Neighbors/8Neighbors.png"  alt = "Image of 8-Neighbors" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> 8-Neighbors  </figcaption>
+ </div>
 
 ### <div id = "Connectivity"> Connectivity </div>
 
@@ -95,9 +119,26 @@ The specified Criteria (Intensity Range ) can be defined by defining a set ‘V�
 
 #### <div id = "4connectivity"> (i) 4-Connectivity: </div>
 
+<p align = 'center'>
+ <img src = "ScreenShots/Connectivity/4Connectivity.png"  alt = "Image of 4-Connectivity" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> 4-Connectivity  </figcaption>
+ </div>
+
 Two pixels p and q with values from V are 4- connected if q is in the set N4 (p).
 
 #### <div id = "8connectivity"> (ii) 8-Connectivity: </div>
+
+<p align = 'center'>
+ <img src = "ScreenShots/Connectivity/8Connectivity.png"  alt = "Image of 8-Connectivity" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> 8-Connectivity  </figcaption>
+ </div>
+
 
 Two pixels p and q with values from V are 8- connected if q is in the set N8 (p). 
       
@@ -106,6 +147,15 @@ Two pixels p and q with values from V are 8- connected if q is in the set N8 (p)
 Two pixels p and q with values from V are m-connected if:
        q is in N4 (p), 	OR
        q is in ND (p) AND the set  N4 (p) ∩  N4 			(p) is empty.
+
+<p align = 'center'>
+ <img src = "ScreenShots/Connectivity/MConnectivity.png"  alt = "Image of M-Connectivity" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> M-Connectivity  </figcaption>
+ </div>
+
 
 ## <div id = "Scr">  Program Screenshots </div>
 
