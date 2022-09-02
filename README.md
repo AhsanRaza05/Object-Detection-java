@@ -111,4 +111,36 @@ Two pixels p and q with values from V are m-connected if:
 ## <div id = "UI">  Program Screenshots </div>
 
 
+<p align = 'center'>
+ <img src = "ScreenShots/UI/FirstWindow.png"  alt = "1st Window" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-A: Browsing image </figcaption>
+ </div>
+ 
+ <p align = 'center'>
+ <img src = "ScreenShots/UI/SecondWindow.png"  alt = "2nd Window" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-A: Selecting an image </figcaption>
+ </div>
+ 
+ <p align = 'center'>
+ <img src = "ScreenShots/UI/ThirdWindow.png"  alt = "3rd Window" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-A: Specifying color of object  </figcaption>
+ </div>
+
+ <p align = 'center'>
+ <img src = "ScreenShots/UI/FinalOutputWindow.png"  alt = "4th Window" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-A: Result  </figcaption>
+ </div>
+ 
  
