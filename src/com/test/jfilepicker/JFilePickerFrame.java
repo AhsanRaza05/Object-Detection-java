@@ -38,7 +38,7 @@ public class JFilePickerFrame extends JFrame {
 	
 	public static String getFilePath() {
 		
-		JFrame frame = new JFrame("Object Detection");
+		JFrame frame = new JFrame("Object Detection in Java");
         
         frame.setLayout(new FlowLayout());
         
