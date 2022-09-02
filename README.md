@@ -24,7 +24,7 @@
 It is a Java based GUI desktop application which “detects the objects in a binary image using the concept of Neighborhood and connectivity”. More specifically it implements the concept of "M-Connectivity" of Digital Image Processing.
 
 ## <div id = "Installation"> How to Install and Run the Project </div>
-
+Load and Execute Project in Eclipse IDE
 ## <div id = "Int"> Introduction </div>
 
 ### <div id = "Neighbour"> 1-Neighborhood </div>
