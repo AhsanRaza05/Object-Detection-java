@@ -75,23 +75,39 @@ public class JFilePicker extends JPanel {
           	
         	    // Display Result in Dialogue Box
         	   	
-        	   	String objectColor = JOptionPane.showInputDialog("Enter Color of the object:\n1 --> Black Colored Objects\n2 --> White colored objects ");
+        	   	String objectColor = "-1";
+        	   	objectColor = JOptionPane.showInputDialog("Enter Color of the object:\n1 --> Black Colored Objects\n2 --> White colored objects ");
         	   	
-        	   	System.out.println(objectColor);
+        	   	System.out.println( "Entered Color: "+ objectColor);
         	   	
-        	   	textArea.setText(ObjectDetection.result(textField.getText().trim(), objectColor));
-        	   	
-        		// wrap a scrollpane around it
-        		scrollPane = new JScrollPane(textArea);
+        	   	if(objectColor != null && !objectColor.isEmpty()) {
+        	   		
 
-        		// display them in a message dialog
-        		pane = new JOptionPane(scrollPane);
+        	   		if(objectColor.equals("1") || objectColor.equals("2")) {
+        	   			
+        	   			textArea.setText(ObjectDetection.result(textField.getText().trim(), objectColor));
+                	   	
+                		// wrap a scrollpane around it
+                		scrollPane = new JScrollPane(textArea);
 
-        		dialgoue = pane.createDialog(null,
-        				"***************************************** Object Detection in Java ***************************************** ");
-        		// dialgoue.setLocation(0,0);
-        		dialgoue.setVisible(true);
-                
+                		// display them in a message dialog
+                		pane = new JOptionPane(scrollPane);
+
+                		dialgoue = pane.createDialog(null,
+                				"***************************************** Object Detection in Java ***************************************** ");
+                		// dialgoue.setLocation(0,0);
+                		dialgoue.setVisible(true);
+                		
+        	   		}
+        	   		else {
+        	   			
+        	   			JOptionPane.showMessageDialog(this, "Invalid Input!");
+        	   		}
+        	   	}
+        	   	else {
+        	   	
+        	   		JOptionPane.showMessageDialog(this, "No Input!");
+        	   	}
             }
         } else if (mode == MODE_SAVE) {
             if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
