@@ -5,6 +5,8 @@
 
 * <a href = "#Installation" > How to Install and Run the Project </a> 
 
+* <a href = "#FileContent" > File Contents </a> 
+
 * <a href = "#Int" > Introduction </a> 
 
   * <a href = "#Neighbour" > Neighbourhood </a>
@@ -25,7 +27,15 @@ It is a Java based GUI desktop application which “detects the objects in a bin
 
 ## <div id = "Installation"> How to Install and Run the Project </div>
 Load and Execute Project in Eclipse IDE
+
+## <div id = "FileContent"> File Contents  </div>
+
+- `src/Application/ObjectDetection.java` includes the implementation of neighbourhood & connectivity concept (main logic).  
+- `src/com/test/jfilepicker package` includes source files for GUI components.
+- `src/com/test/jfilepicker package/images package` includes the binary images.
+
 ## <div id = "Int"> Introduction </div>
+
 
 ### <div id = "Neighbour"> 1-Neighborhood </div>
 
