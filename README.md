@@ -18,7 +18,9 @@
     * <a href = "#4connectivity" > 4-Connectivity </a> 
     * <a href = "#8connectivity" >   8-Connectivity </a>
     * <a href = "#Mconnectivity" >   M-Connectivity </a>
-   
+
+* <a href = "#Inputimg" > Input images of objects </a>  
+
 * <a href = "#Scr" > Program Screenshots </a>  
          
 ## <div id = "Overview_Head"> Overview </div>       
@@ -168,8 +170,9 @@ Two pixels p and q with values from V are m-connected if:
  
  <div align = "center">
   <figcaption align = "center"> M-Connectivity  </figcaption>
- </div>
+ </div>  
 
+## <div id = "Inputimg">  Input images of objects </div>
 
 ## <div id = "Scr">  Program Screenshots </div>
 
