@@ -220,7 +220,7 @@ Two pixels p and q with values from V are m-connected if:
 </p>
  
  <div align = "center">
-  <figcaption align = "center"> Fig-B: Selecting an image </figcaption>
+  <figcaption align = "center"> Fig-B: Selecting an image  <a href = "#Inputimg" > (See Fig-I) </a> </figcaption>
  </div> </br>
  
  <p align = 'center'>
