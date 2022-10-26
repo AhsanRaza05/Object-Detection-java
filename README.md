@@ -173,6 +173,37 @@ Two pixels p and q with values from V are m-connected if:
  </div>  
 
 ## <div id = "Inputimg">  Input images of objects </div>
+<p align = 'center'>
+ <img src = "src/com/test/images/Black Fruits Objects.bmp"  alt = "Black Colored Objects (Fruits)" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-I: Black Colored Objects (Fruits) </figcaption>
+ </div> </br>
+ 
+ <p align = 'center'>
+ <img src = "src/com/test/images/White Fruit Objects.bmp"  alt = "White Colored Objects (Fruits)" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-II: White Colored Objects (Fruits) </figcaption>
+ </div> </br>
+ 
+ <p align = 'center'>
+ <img src = "src/com/test/images/Un Filled White Coins.bmp"  alt = "White Colored Objects (Un Post Processed Coins)" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-III: White Colored Objects (Un-Post Processed Coins) </figcaption>
+ </div> </br>
+ 
+ <p align = 'center'>
+ <img src = "src/com/test/images/Filled White Coins Objects.bmp"  alt = "White Colored Objects (Post Processed Coins)" >
+</p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-IV:  White Colored Objects (Post Processed Coins) </figcaption>
+ </div> </br>
 
 ## <div id = "Scr">  Program Screenshots </div>
 
