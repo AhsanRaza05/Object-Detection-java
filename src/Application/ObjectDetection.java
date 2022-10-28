@@ -147,13 +147,13 @@ public class ObjectDetection {
         
         try {
             //File input = new File("C:\\Users\\AHSAN\\Desktop\\abc.bmp"); // Has 15 Objects
-            System.out.println("HI AHSA");
+            //System.out.println("HI AHSA");
             
 //            JFilePickerFrame t = new JFilePickerFrame();
 //            t.setVisible(true);
             
             File input = new File(path);
-            System.out.println(input);
+            //System.out.println(input);
             //File input = new File("filled.bmp");
 //            File input = new File("src\\com\\images\\Fruits.bmp");
             //File input = new File("C:\\Users\\AHSAN\\Desktop\\Test.bmp");
@@ -206,7 +206,7 @@ public class ObjectDetection {
 //        System.out.println("Height = " + img.length);
 //        System.out.println("Width = " + img[0].length);
 
-        System.out.println("img = "+img[124][114]);
+        //System.out.println("img = "+img[124][114]);
 
         int cv = 0;
         int total = 0;
@@ -233,7 +233,7 @@ public class ObjectDetection {
                     if(!hasNeighbours){ // If Pixel has No Neighbours then consider it as new object directly.
                         o++;
                         objects.add(x);
-                        System.out.println("\nHI 1");
+                        //System.out.println("\nHI 1");
                     }
 
                     else{  
@@ -371,9 +371,12 @@ public class ObjectDetection {
 
         // Display Final List of All Objects along with the coordinates
             // Complexity = O(n^2)
-        result += "\n Final List \n\n";
+       // result += "\n\n\n*************** Final List ***************\n\n";
 //        System.out.println("\n Final List \n");
         Integer c = 1, z = 0 ;
+        
+        result = "\nNo. of Objects: " + objects2.size() + "\n";
+        
         for(ArrayList <ObjectDetection> l : objects2){
 
         	result += "\nObject # %s consists of %s Pixels \n".formatted(c , l.size());
@@ -397,12 +400,12 @@ public class ObjectDetection {
 
         }
         
-        result += "\nNo. of Objects: " + objects2.size() + "\n"; 
+//        result += "\nNo. of Objects: " + objects2.size() + "\n"; 
         
 //        System.out.println("\nNo. of Objects: " + objects2.size());
         
         result += "\nTotal Pixel: " + z + "\n";
-        result += "\nTotal Pixel: " + y + "\n";
+//        result += "\nTotal Pixel: " + y + "\n";
         
 //        System.out.println("\nTotal Pixel: " + z);
 //        System.out.println("\nTotal Pixel: " + y);
